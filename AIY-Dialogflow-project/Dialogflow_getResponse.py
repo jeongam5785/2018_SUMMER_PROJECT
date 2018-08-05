@@ -31,3 +31,7 @@ def response_toDict(response):
     print(dict_response['parameters']['Home_appliance'])
     print(dict_response['parameters']['action'])
     return dict_response
+
+
+
+
