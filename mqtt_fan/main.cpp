@@ -11,19 +11,15 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/json_parser.hpp>
 
-
-
-
-
 namespace
 {
-	static const char *s_address = "192.168.0.5:1883"; //¼­¹ö ÁÖ¼Ò?
+	static const char *s_address = "**********:1883";  // server address
 	static const char *s_user_name = NULL;
 	static const char *s_password = NULL;
 	static const char *s_topic = "home/fan/#";
-	static const char* s_clinet_id = "appiuuujnink";
+	static const char* s_clinet_id = "************";
 
-	std::string toString(int value)//Á¤¼ö¸¦ ¹®ÀÚ¿­·Î º¯È¯ ÇÔ¼ö
+	std::string toString(int value)
 	{
 		std::stringstream ss;
 		ss << value;
@@ -73,7 +69,7 @@ void notify_updates(Fan& fan, Fan::Flag update_flags)
 	if (!connection)
 		return;
 
-	std::string topic;//ÅäÇÈ
+	std::string topic;//í† í”½
 	std::string payload;//
 
 	if (update_flags & Fan::FLAG_POWER)
@@ -98,25 +94,6 @@ void notify_updates(Fan& fan, Fan::Flag update_flags)
 	}
 	printf("%d, %d, %d\n", fan.power(), fan.speed(), fan.swing());
 
-	/*mg_mqtt_publish(connection, topic.c_str(), 0, MG_MQTT_QOS(1), payload.c_str(), payload.size());*///ÅäÇÈ°ú µ¥ÀÌÅÍ º¸³¿
-}
-
-static void update_callback(Fan& fan, Fan::Flag update_flags)
-{
-	if (update_flags & Fan::FLAG_POWER)
-	{
-		
-	}
-	if (update_flags & Fan::FLAG_SPEED)
-	{
-
-	}
-	if (update_flags & Fan::FLAG_SWING)
-	{
-
-	}
-
-	notify_updates(fan, update_flags);
 }
 
 Fan fan(update_callback);
@@ -161,27 +138,7 @@ void checkSTATE(void) {
 			temp_p |= 1 << i;
 
 	state = temp;
-	state_p = temp_p;
-
-
-
-
-	//for (int i = 0; i < 9; i++)
-	//{
-	//	if (state & (1 << i))
-	//	{
-	//		printf("%d", 1);
-	//	}
-	//	else
-	//	{
-	//		printf("%d", 0);
-	//	}
-
-	//}
-	//
-	//printf("\n");
-	//printf("%d\n", cnt_p);
-	
+	state_p = temp_p;	
 		
 }
 
@@ -190,7 +147,7 @@ int main(int argc, char **argv)
 {
 	option_parser(argc, argv);
 
-	wiringPiSetup();//gpio ÇÉ ¼Â¾÷
+	wiringPiSetup();
 
 	pinMode(SPEED1, INPUT);
 	pinMode(SPEED2, INPUT);
@@ -200,7 +157,7 @@ int main(int argc, char **argv)
 	pinMode(SPEED6, INPUT);
 	pinMode(SPEED7, INPUT);
 	pinMode(SPEED8, INPUT);
-	pinMode(SWING, INPUT);//¼±Ç³±â ÇÉ output ¼³Á¤
+	pinMode(SWING, INPUT);
 
 	mg_mgr_init(&mgr, NULL);
 
@@ -223,7 +180,6 @@ int main(int argc, char **argv)
 	past_arr[7] = digitalRead(SPEED8);
 	past_arr[8] = digitalRead(SWING);
 
-	//°øÅëºÎºÐ 1
 	for (;;)
 	{
 		if (!connection)
@@ -236,9 +192,7 @@ int main(int argc, char **argv)
 			}
 		}
 
-		//°øÅëºÎºÐ 2        
-
-		mg_mgr_poll(&mgr, 100);	// ???
+		mg_mgr_poll(&mgr, 100);	
 
 		fan.poll();
 
@@ -291,25 +245,6 @@ int main(int argc, char **argv)
 		default: break;
 		}
 
-
-		/*if (state_monitoring()) {
-			
-				if (state_p == 0x00ff)
-					fan.set_power(0);
-				else
-					fan.set_power(1);
-
-				if (cur_arr[8])
-					fan.set_swing(0);
-				else
-					fan.set_swing(1);
-
-				for (int i = 0; i <= 7; i++)
-					if (cur_arr[i] == 0)
-						speed = i + 1;
-
-				fan.set_speed(speed);
-		}*/
 	}
 }
 
@@ -363,7 +298,7 @@ void ev_handler(struct mg_connection *nc, int ev, void *p)
 	}
 }
 
-void option_parser(int argc, char** argv)//°øÅë
+void option_parser(int argc, char** argv)
 {
 	/* Parse command line arguments */
 	for (int i = 1; i < argc; i++) {
