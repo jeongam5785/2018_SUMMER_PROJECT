@@ -12,6 +12,7 @@ def mqtt_func(topic, msg):
 
 
 def send_mqtt_topic_msg(Dict_text):
+    
     if Dict_text['parameters']['Home_appliance'] == ['light']:
         print('light')
         if Dict_text['parameters']['number'] != 0:
@@ -28,6 +29,7 @@ def send_mqtt_topic_msg(Dict_text):
         if Dict_text['parameters']['action'] == ['turn off']:
             print('turn off')
             mqtt_func('home/light/set', 'OFF')
+            
     if Dict_text['parameters']['Home_appliance'] == ['fan']:
         print('fan')
         if Dict_text['parameters']['number'] != 0:  # after turn on
@@ -43,6 +45,7 @@ def send_mqtt_topic_msg(Dict_text):
         if Dict_text['parameters']['action'] == ['oscillate']:  # after turn on
             print('oscillate')
             mqtt_func('home/fan/oscillate/set', 'ON')
+            
     if Dict_text['parameters']['Home_appliance'] == ['humidifier']:
         print('humidifier')
         if Dict_text['parameters']['default'] != 0:
@@ -55,6 +58,7 @@ def send_mqtt_topic_msg(Dict_text):
         if Dict_text['parameters']['action'] == ['turn off']:
             print('turn off')
             mqtt_func('home/humidifier/set', 'OFF')
+            
     if Dict_text['parameters']['Home_appliance'] == ['TV']:
         print('TV')
         if Dict_text['parameters']['number'] != 0:
@@ -88,3 +92,6 @@ def send_mqtt_topic_msg(Dict_text):
         if Dict_text['parameters']['action'] == ['turn\xa0off']:
             print('turn off')
             # mqtt_func('home/TV/set','OFF')
+            
+            
+            
