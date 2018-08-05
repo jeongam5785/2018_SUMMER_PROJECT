@@ -15,8 +15,8 @@ logging.basicConfig(
 
 class Training:
     def __init__(self):
-        self.project_id = 'iot-project-e999e'                           # dialogflow project id
-        self.client_access_token = '39fcdda768af44179e97cc74e6d22656'   # dialogflow agent client token
+        self.project_id = '***********'                           # dialogflow project id
+        self.client_access_token = '***************************'   # dialogflow agent client token
         self.language_code = 'en'
         self.session_client = dialogflow.SessionsClient()
         self.assistant = aiy.assistant.grpc.get_assistant()
