@@ -15,7 +15,7 @@ logging.basicConfig(
 
 class Training:
     def __init__(self):
-        self.project_id = '***********'                           # dialogflow project id
+        self.project_id = '************'                           # dialogflow project id
         self.client_access_token = '***************************'   # dialogflow agent client token
         self.language_code = 'en'
         self.session_client = dialogflow.SessionsClient()
@@ -26,7 +26,7 @@ class Training:
         button = aiy.voicehat.get_button()
         with aiy.audio.get_recorder():
             while True:
-                session_id = 123456789
+                session_id = ************
                 session = self.session_client.session_path(self.project_id, session_id)
                 while True:
                     self.status_ui.status('ready')
