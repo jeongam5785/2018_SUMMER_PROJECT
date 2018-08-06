@@ -13,7 +13,7 @@ logging.basicConfig(
     format="[%(asctime)s] %(levelname)s:%(name)s:%(message)s"
 )
 
-class Training:
+class AIY_getVoice:
     def __init__(self):
         self.project_id = '************'                           # dialogflow project id
         self.client_access_token = '***************************'   # dialogflow agent client token
@@ -49,5 +49,8 @@ class Training:
 
 
 if __name__ == '__main__':
-    training = Training()
-    training.main()
+    aiy_getVoice = AIY_getVoice()
+    aiy_getVoice.main()
+    
+    
+    
