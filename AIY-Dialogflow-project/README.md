@@ -14,7 +14,7 @@ You have to go through a few steps to use this sources.
 ### 1-2. Install paho-mqtt 
 #
 ```
-$ sudo pip3 install paho-mqtt
+/~ $ sudo pip3 install paho-mqtt
 ```
 #
 ### 2-1. Create dialogflow agent      https://dialogflow.com/ 
