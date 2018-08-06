@@ -10,7 +10,15 @@ You have to go through a few steps to use this sources.
 
 2-1. #create dialogflow agent / https://dialogflow.com/
 
-2-2  #download the credentials
+2-2  #download the credentials 
 
-![real](https://user-images.githubusercontent.com/39085495/43694573-efe2dc68-996e-11e8-8155-e3d4fadf0ca4.PNG) <--download
+![real](https://user-images.githubusercontent.com/39085495/43694573-efe2dc68-996e-11e8-8155-e3d4fadf0ca4.PNG)
 
+2-3  #copy the text and add assistant.json file in rasp board / $sudo nano assistant.json 
+
+2-4  #download the service account ket
+
+<div>
+![first](https://user-images.githubusercontent.com/39085495/43696675-2313e00e-997a-11e8-98a1-d662359f8be0.PNG)
+![second](https://user-images.githubusercontent.com/39085495/43696684-2f0117e2-997a-11e8-93ed-2fbfa7458653.PNG)
+</div>
