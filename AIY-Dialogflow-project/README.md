@@ -13,13 +13,18 @@ You have to go through a few steps to use this sources.
 ```
 $ sudo pip3 install paho-mqtt
 ```
+
 2-1. #create dialogflow agent  https://dialogflow.com/
+
 
 2-2  #download the credentials 
 
 ![real](https://user-images.githubusercontent.com/39085495/43694573-efe2dc68-996e-11e8-8155-e3d4fadf0ca4.PNG)
 
-2-3  #copy the text and add assistant.json file in rasp board /~ $ sudo nano assistant.json 
+2-3  #copy the text and add assistant.json file in rasp board /
+```
+~ $ sudo nano assistant.json 
+```
 
 2-4  #download the service account key
 
@@ -29,6 +34,7 @@ $ sudo pip3 install paho-mqtt
 ```
 ~ $ sudo nano service-account-file.json
 ```
+
 2-6 #export service-account-file 
 ```
 ~ $ export GOOGLE_APPLICATION_CREDENTIALS="/home/pi/file__path/service-account-file.json"
