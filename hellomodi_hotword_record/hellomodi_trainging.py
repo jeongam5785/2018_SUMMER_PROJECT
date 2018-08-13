@@ -5,7 +5,7 @@ from aiy_led import Leds
 import aiy.voicehat
 import time
 import aiy.assistant.grpc
-import wavedump
+import _WaveDump
 import _WaveDump1
 import RPi.GPIO as GPIO
 from pytz import timezone
@@ -32,7 +32,7 @@ class MyRec:
         if count >= 1:
             _WaveDump1.record_to_wave('/home/pi/hellomodi_wave_file/wave_file/'+y + '.wav', 10)
         else:
-            wavedump.record_to_wave('/home/pi/hellomodi_wave_file/wave_file/'+y + '.wav', 10)
+            _WaveDump.record_to_wave('/home/pi/hellomodi_wave_file/wave_file/'+y + '.wav', 10)
         count += 1
 
 
