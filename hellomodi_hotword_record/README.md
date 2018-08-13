@@ -1,10 +1,10 @@
-# 'HELLO, MODI' Hotword Record
+# "HELLO, MODI" Hotword Record
 
 
-By using ***record_to_wave(filepath, duration)*** function in ***src/aiy/vision/audio.py***, we can save **'HELLO, MODI'** voice file as .wav   
+By using ***record_to_wave(filepath, duration)*** function in ***src/aiy/vision/audio.py***, we can save **"HELLO, MODI"** voice file as .wav     
 
 
-## Reference
+## Reference  
 
 
 1. The form of file name is **yyyy-mm-dd_hh-mm-ss.wav** 
@@ -16,7 +16,7 @@ By using ***record_to_wave(filepath, duration)*** function in ***src/aiy/vision/
 ```
 
 
-3. You can change a button color. 
+3. You can change the color of the button. More information... check https://github.com/google/aiyprojects-raspbian.git
 ```
 RED = (0xFF, 0x00, 0x00)    
 GREEN = (0x00, 0xFF, 0x00)  
@@ -26,6 +26,7 @@ PURPLE = (0xFF, 0x00, 0xFF)
 CYAN = (0x00, 0xFF, 0xFF)   
 WHITE = (0xFF, 0xFF, 0xFF)  
 ```
+
 
 
 
