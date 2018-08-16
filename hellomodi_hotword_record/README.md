@@ -29,7 +29,7 @@ WHITE = (0xFF, 0xFF, 0xFF)
 ```
 #
 
-More information... check https://github.com/google/aiyprojects-raspbian.git
+For more information... check https://github.com/google/aiyprojects-raspbian.git
 #
 
 
